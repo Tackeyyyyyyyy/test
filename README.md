@@ -1,0 +1,2 @@
+# twitterWeatherBot
+TwitterAPIを用いたお天気BOT
