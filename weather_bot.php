@@ -12,3 +12,8 @@ $accessTokenSecret = ACCESS_SECRET;
 $connection = new TwitterOAuth($consumerKey, $consumerSecret, $accessToken, $accessTokenSecret);
 
 $status = $connection->post('statuses/update', ['status' => $text]);
+
+
+/* 天気予報 */
+
+$text = '今日の東京の天気は'.$wether.'です。';
