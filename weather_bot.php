@@ -11,9 +11,22 @@ $accessToken = ACCESS_TOKEN;
 $accessTokenSecret = ACCESS_SECRET;
 $connection = new TwitterOAuth($consumerKey, $consumerSecret, $accessToken, $accessTokenSecret);
 
-$status = $connection->post('statuses/update', ['status' => $text]);
+
 
 
 /* 天気予報 */
+$url = "http://weather.livedoor.com/forecast/webservice/json/v1?city=130010";
+$json = file_get_contents($url);
+$json = mb_convert_encoding($json, 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN');
+$arr = json_decode($json,true);
+if ($arr === NULL) {
+    return;
+}else{
+    $wether = $arr["forecasts"][0]["telop"];//天気
+}
+
 
 $text = '今日の東京の天気は'.$wether.'です。';
+
+//tweet
+$status = $connection->post('statuses/update', ['status' => $text]);
