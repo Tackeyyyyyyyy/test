@@ -28,5 +28,5 @@ if ($arr === NULL) {
 
 $text = '今日の東京の天気は'.$wether.'です。';
 
-//tweet
+/* ツイート */
 $status = $connection->post('statuses/update', ['status' => $text]);
