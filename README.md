@@ -4,3 +4,5 @@ TwitterAPIを用いたお天気BOT
 
 cronを使って自分のTwitterアカウントに
 天気を教えてくれるBOT
+
+事前にtwitterAPIをダウンロードしておいてください
